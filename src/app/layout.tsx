@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Una - Educação Ambiental e Educação Integrada',
-  description: 'Transforme sua comunidade através da educação ambiental e práticas sustentáveis',
+  title: 'Una - Educação Ambiental e Gamificação Integrada',
+  description: 'Transforme sua comunidade através de práticas sustentáveis',
 }
 
 export default function RootLayout({
