@@ -8,7 +8,15 @@ import { Bell } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Image from 'next/image'
 
-const carouselItems = [
+type CarouselItemType = {
+  type: 'video' | 'article' | 'news'
+  title: string
+  src?: string // Optional for videos
+  image?: string // Optional for images
+  link?: string // Optional for articles/news
+}
+
+const carouselItems: CarouselItemType[] = [
   {
     type: 'video',
     title: 'Como reciclar corretamente',
@@ -58,7 +66,7 @@ export default function NewsletterSection() {
               <CarouselItem key={index}>
                 <Card>
                   <CardContent className="flex flex-col items-center p-6">
-                    {item.type === 'video' ? (
+                    {item.type === 'video' && item.src ? (
                       <div className="w-full aspect-video mb-4">
                         <iframe
                           src={item.src}
@@ -69,16 +77,18 @@ export default function NewsletterSection() {
                         ></iframe>
                       </div>
                     ) : (
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={300}
-                        height={200}
-                        className="mb-4 rounded-lg"
-                      />
+                      item.image && (
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={300}
+                          height={200}
+                          className="mb-4 rounded-lg"
+                        />
+                      )
                     )}
                     <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    {item.type !== 'video' && (
+                    {item.type !== 'video' && item.link && (
                       <Button asChild variant="link">
                         <a href={item.link}>Leia mais</a>
                       </Button>
