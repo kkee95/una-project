@@ -1,13 +1,25 @@
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 
-export default function PartnersSection() {
-  const partners = [
-    { name: "VIRA-BICHO", role: "Mobilização comunitária e educação", logo: "/placeholder.svg" },
-    { name: "Eye", role: "Processamento de PET e alumínio", logo: "/placeholder.svg" },
-    { name: "Várzea Composta", role: "Gestão de resíduos orgânicos", logo: "/placeholder.svg" },
-  ]
+const partners = [
+  { 
+    name: "VIRA-BICHO", 
+    role: "Mobilização comunitária e educação", 
+    logo: "/images/Vira_Bicho_logo.png"
+  },
+  { 
+    name: "Eye", 
+    role: "Processamento de PET e alumínio", 
+    logo: "/images/eye-logo.png"
+  },
+  { 
+    name: "Várzea Composta", 
+    role: "Gestão de resíduos orgânicos", 
+    logo: "/images/varzea-composta-logo.png"
+  },
+]
 
+export default function PartnersSection() {
   return (
     <section id="parceiros" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
