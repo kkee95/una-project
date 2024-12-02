@@ -19,30 +19,30 @@ type CarouselItemType = {
 const carouselItems: CarouselItemType[] = [
   {
     type: 'video',
-    title: 'Como reciclar corretamente',
-    src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    title: 'FOSSA BAIXO CUSTO SUSTENTÁVEL | TEVAP BET',
+    src: 'https://youtu.be/4Efy0fpUx48?si=uvORGjyOb54g5fEq',
   },
   {
     type: 'article',
-    title: 'Impacto da educação ambiental nas escolas',
-    image: '/images/article-1.jpg',
+    title: 'Reimaginando o Tetraedro de Materiais por Donahue',
+    image: 'public/images/donahue-2019-reimagining-the-materials-tetrahedron-1.pdf',
     link: '#',
   },
   {
     type: 'news',
-    title: 'Nova política de reciclagem implementada na cidade',
-    image: '/images/news-1.jpg',
+    title: 'A mudança de consciência começa nos hábitos',
+    image: 'https://medium.com/@kevensantos/a-mudança-de-consciência-começa-nos-hábitos-10b9b726207b',
     link: '#',
   },
   {
     type: 'video',
-    title: 'Dicas para reduzir o consumo de plástico',
-    src: 'https://www.youtube.com/embed/VIDEO_ID_2',
+    title: 'COMO FAZER UMA FOSSA ECOLÓGICA DE BANANEIRAS - PASSO A PASSO / ECO SEWAGE SYSTEM',
+    src: 'https://youtu.be/6mX9ZziklKY?si=ItXhfXaS7Wzz6aeA',
   },
   {
     type: 'article',
-    title: 'Benefícios da compostagem doméstica',
-    image: '/images/article-2.jpg',
+    title: 'Cartilha de manejo da agua IPESA',
+    image: 'public/images/cartilha_manejo_da_agua_ipesa_v2.pdf',
     link: '#',
   },
 ]
