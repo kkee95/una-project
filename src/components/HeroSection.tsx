@@ -8,7 +8,7 @@ export default function HeroSection() {
         <p className="text-xl mb-8 max-w-2xl mx-auto">Transforme sua comunidade através de práticas sustentáveis</p>
         <div className="space-x-4">
           <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100">Comece Agora</Button>
-          <Button size="lg" variant="outline" className="text-white border-white hover:bg-emerald-700">Saiba Mais</Button>
+          <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-emerald-700">Saiba Mais</Button>
         </div>
       </div>
     </section>
