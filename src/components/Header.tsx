@@ -3,13 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
-interface HeaderProps {
-}
-
-export default function Header({ }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <header className="bg-emerald-600 text-white py-4">
@@ -36,18 +32,3 @@ export default function Header({ }: HeaderProps) {
     </header>
   )
 }
-```[v0-no-op-code-block-prefix]
-
-```tsx file="src/components/HeroSection.tsx" type="code" project="src/components/HeroSection"
-import { Button } from '@chakra-ui/react';
-
-function MyComponent() {
-  return (
-    <div>
-      <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100">Comece Agora</Button>
-      <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-emerald-700">Saiba Mais</Button>
-    </div>
-  );
-}
-
-export default MyComponent;
