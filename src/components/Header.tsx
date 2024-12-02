@@ -2,35 +2,20 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Smartphone, Monitor } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface HeaderProps {
-  isMobileView: boolean;
-  setIsMobileView: (value: boolean) => void;
 }
 
-export default function Header({ isMobileView, setIsMobileView }: HeaderProps) {
+export default function Header({ }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-
-  const toggleView = () => {
-    setIsMobileView(!isMobileView)
-  }
 
   return (
     <header className="bg-emerald-600 text-white py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold">Una</Link>
         <div className="flex items-center">
-          <Button
-            onClick={toggleView}
-            variant="outline"
-            size="icon"
-            className="mr-2 text-white border-white hover:bg-emerald-700"
-            title={isMobileView ? "Alternar para versão desktop" : "Alternar para versão mobile"}
-          >
-            {isMobileView ? <Monitor size={20} /> : <Smartphone size={20} />}
-          </Button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden"
@@ -51,3 +36,18 @@ export default function Header({ isMobileView, setIsMobileView }: HeaderProps) {
     </header>
   )
 }
+```[v0-no-op-code-block-prefix]
+
+```tsx file="src/components/HeroSection.tsx" type="code" project="src/components/HeroSection"
+import { Button } from '@chakra-ui/react';
+
+function MyComponent() {
+  return (
+    <div>
+      <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100">Comece Agora</Button>
+      <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-emerald-700">Saiba Mais</Button>
+    </div>
+  );
+}
+
+export default MyComponent;
