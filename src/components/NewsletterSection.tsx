@@ -4,37 +4,37 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Newspaper, Video, Bell } from 'lucide-react'
+import { Bell } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Image from 'next/image'
 
 const carouselItems = [
   {
     type: 'video',
-    title: 'FOSSA BAIXO CUSTO SUSTENTÁVEL | TEVAP BET',
-    src: 'https://youtu.be/4Efy0fpUx48?si=RNRvTgC2Z0Ujo5sw',
+    title: 'Como reciclar corretamente',
+    src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
   },
   {
     type: 'article',
-    title: 'Manual manejo de águas',
-    image: '/images/cartilha_manejo_da_agua_ipesa_v2.pdf',
+    title: 'Impacto da educação ambiental nas escolas',
+    image: '/images/article-1.jpg',
     link: '#',
   },
   {
     type: 'news',
-    title: 'A mudança de consciência começa nos hábitos',
-    image: 'https://medium.com/@kevensantos/a-mudança-de-consciência-começa-nos-hábitos-10b9b726207b',
+    title: 'Nova política de reciclagem implementada na cidade',
+    image: '/images/news-1.jpg',
     link: '#',
   },
   {
     type: 'video',
-    title: 'A Melhor Fossa Ecológica TEVAP, veja e aprenda para fazer em sua casa',
-    src: 'https://youtu.be/q3ORMvgqaaY?si=ewfPvVKEqctw0oDh',
+    title: 'Dicas para reduzir o consumo de plástico',
+    src: 'https://www.youtube.com/embed/VIDEO_ID_2',
   },
   {
     type: 'article',
-    title: 'Reimagining the Materials Tetrahedron',
-    image: '/images/donahue-2019-reimagining-the-materials-tetrahedron-1.pdf',
+    title: 'Benefícios da compostagem doméstica',
+    image: '/images/article-2.jpg',
     link: '#',
   },
 ]
