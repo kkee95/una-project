@@ -4,20 +4,28 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Newspaper, Video, Bell } from 'lucide-react'
+import { Bell } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Image from 'next/image'
 
-const carouselItems = [
+type CarouselItemType = {
+  type: 'video' | 'article' | 'news'
+  title: string
+  src?: string // Optional for videos
+  image?: string // Optional for images
+  link?: string // Optional for articles/news
+}
+
+const carouselItems: CarouselItemType[] = [
   {
     type: 'video',
     title: 'FOSSA BAIXO CUSTO SUSTENTÁVEL | TEVAP BET',
-    src: 'https://youtu.be/4Efy0fpUx48?si=RNRvTgC2Z0Ujo5sw',
+    src: 'https://youtu.be/4Efy0fpUx48?si=uvORGjyOb54g5fEq',
   },
   {
     type: 'article',
-    title: 'Manual manejo de águas',
-    image: '/images/cartilha_manejo_da_agua_ipesa_v2.pdf',
+    title: 'Reimaginando o Tetraedro de Materiais por Donahue',
+    image: 'public/images/donahue-2019-reimagining-the-materials-tetrahedron-1.pdf',
     link: '#',
   },
   {
@@ -28,13 +36,13 @@ const carouselItems = [
   },
   {
     type: 'video',
-    title: 'A Melhor Fossa Ecológica TEVAP, veja e aprenda para fazer em sua casa',
-    src: 'https://youtu.be/q3ORMvgqaaY?si=ewfPvVKEqctw0oDh',
+    title: 'COMO FAZER UMA FOSSA ECOLÓGICA DE BANANEIRAS - PASSO A PASSO / ECO SEWAGE SYSTEM',
+    src: 'https://youtu.be/6mX9ZziklKY?si=ItXhfXaS7Wzz6aeA',
   },
   {
     type: 'article',
-    title: 'Reimagining the Materials Tetrahedron',
-    image: '/images/donahue-2019-reimagining-the-materials-tetrahedron-1.pdf',
+    title: 'Cartilha de manejo da agua IPESA',
+    image: 'public/images/cartilha_manejo_da_agua_ipesa_v2.pdf',
     link: '#',
   },
 ]
@@ -58,7 +66,7 @@ export default function NewsletterSection() {
               <CarouselItem key={index}>
                 <Card>
                   <CardContent className="flex flex-col items-center p-6">
-                    {item.type === 'video' ? (
+                    {item.type === 'video' && item.src ? (
                       <div className="w-full aspect-video mb-4">
                         <iframe
                           src={item.src}
@@ -69,16 +77,18 @@ export default function NewsletterSection() {
                         ></iframe>
                       </div>
                     ) : (
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={300}
-                        height={200}
-                        className="mb-4 rounded-lg"
-                      />
+                      item.image && (
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={300}
+                          height={200}
+                          className="mb-4 rounded-lg"
+                        />
+                      )
                     )}
                     <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    {item.type !== 'video' && (
+                    {item.type !== 'video' && item.link && (
                       <Button asChild variant="link">
                         <a href={item.link}>Leia mais</a>
                       </Button>
