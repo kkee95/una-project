@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Educação Ambiental e Gamificação Integrada',
+  title: 'Educação Ambiental e Integrada',
   description: 'Transforme sua comunidade através de práticas sustentáveis',
 }
 
